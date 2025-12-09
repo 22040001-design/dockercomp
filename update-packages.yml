@@ -1,7 +1,5 @@
 ---
 - hosts: all
-  become: true
-  become_method: sudo
   tasks:
 
     - name: Update apt cache
@@ -11,3 +9,5 @@
     - name: Upgrade all packages
       apt:
         upgrade: dist
+
+
