@@ -3,7 +3,11 @@
   become: true
   become_method: sudo
   tasks:
-    - name: Upgrade dnf packages
-      dnf:
-        name: "*"
-        state: latest
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
